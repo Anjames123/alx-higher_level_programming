@@ -1,11 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
+"""Define a Rectangle"""
+
 
 class Rectangle:
-    """
-    A class that defines a rectangle.
-
-    Attributes:
-        None
-    """
-
+    """Empty Rectangle"""
     pass
