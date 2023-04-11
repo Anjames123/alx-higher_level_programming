@@ -11,4 +11,4 @@ def lookup(obj):
     A list of strings representing the names of all the attributes and methods of the object, sorted in alphabetical order.
 
     """
-    return sorted(dir(obj))
+    return (dir(obj))
