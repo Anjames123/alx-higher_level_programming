@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
+
 class MyList(list):
     """
-    A class MyList that inherits from the built-in list class in Python.
+    A custom class MyList that inherits from the built-in list class in Python.
+
     """
 
     def print_sorted(self):
