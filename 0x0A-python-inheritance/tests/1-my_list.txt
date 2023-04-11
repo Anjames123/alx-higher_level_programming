@@ -1,0 +1,22 @@
+Test to ensure MyList class is working as expected:
+
+Creating an instance of MyList class and adding integers to it:
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+
+Printing the original list:
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+Calling the print_sorted() method to print the list in ascending order:
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+Ensuring the original list is still intact:
+>>> print(my_list)
+[1, 4, 2, 3, 5]
