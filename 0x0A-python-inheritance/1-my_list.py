@@ -9,6 +9,5 @@ class MyList(list):
         """
         Public instance method that prints the list in ascending order.
         """
-        sorted_list = sorted(self)  # sort the list in ascending order
-        print(sorted_list)  # print the sorted list
+        print(sorted(self))
 
