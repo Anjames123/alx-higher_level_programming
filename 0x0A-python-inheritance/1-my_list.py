@@ -11,7 +11,8 @@ class MyList(list):
 
     def print_sorted(self):
         """
-        Public instance method that sorts and prints the list in ascending order.
+        Public instance method that sorts and prints the list in ascending
+        order.
         """
         sorted_list = sorted(self)  # sort the list in ascending order
         print(sorted_list)  # print the sorted list
