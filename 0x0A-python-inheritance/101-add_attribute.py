@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Adds a new attribute to an object if it's possible """
+""" Function that adds a new attribute to an object if it’s possible: """
 
 
 def add_attribute(obj, attr, value):
