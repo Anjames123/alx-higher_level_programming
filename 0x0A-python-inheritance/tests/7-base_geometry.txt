@@ -1,11 +1,75 @@
-This is a test file for the BaseGeometry class.
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("str", 1)
 
-Tests for the area() method:
-- Test 1: Calling the area() method on an instance of the BaseGeometry class should raise an Exception with the message "area() is not implemented".
+>>> bg.integer_validator("str", "str")
+Traceback (most recent call last):
+    ...
+TypeError: str must be an integer
 
-Tests for the integer_validator() method:
-- Test 1: Calling the integer_validator() method on an instance of the BaseGeometry class with a name parameter that is not a string should raise a TypeError with the message "<name> must be a string".
-- Test 2: Calling the integer_validator() method on an instance of the BaseGeometry class with a value parameter that is not an integer should raise a TypeError with the message "<name> must be an integer".
-- Test 3: Calling the integer_validator() method on an instance of the BaseGeometry class with a value parameter that is less than or equal to 0 should raise a ValueError with the message "<name> must be greater than 0".
 
-End of test file.
+>>> bg.integer_validator("str", -104)
+Traceback (most recent call last):
+    ...
+ValueError: str must be greater than 0
+
+
+>>> bg.integer_validator("str", 0)
+Traceback (most recent call last):
+    ...
+ValueError: str must be greater than 0
+
+>>> bg.integer_validator("str",)
+Traceback (most recent call last):
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+>>> bg.integer_validator(,1)
+Traceback (most recent call last):
+    ...
+SyntaxError: invalid syntax
+
+>>> bg.integer_validator("", 1)
+
+>>> bg.integer_validator("string", True)
+Traceback (most recent call last):
+    ...
+TypeError: string must be an integer
+
+>>> bg.integer_validator("string", 10.76)
+Traceback (most recent call last):
+    ...
+TypeError: string must be an integer
+
+>>> bg.integer_validator("", True)
+Traceback (most recent call last):
+    ...
+TypeError:  must be an integer
+
+>>> bg.integer_validator("str", None)
+Traceback (most recent call last):
+    ...
+TypeError: str must be an integer
+
+>>> bg.integer_validator("str", {1,3,4})
+Traceback (most recent call last):
+    ...
+TypeError: str must be an integer
+
+>>> bg.integer_validator("str", [11,0,9])
+Traceback (most recent call last):
+    ...
+TypeError: str must be an integer
+
+
+>>> bg.integer_validator("str", (1,))
+Traceback (most recent call last):
+    ...
+TypeError: str must be an integer
+
+
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
