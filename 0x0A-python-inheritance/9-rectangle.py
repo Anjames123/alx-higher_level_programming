@@ -32,24 +32,23 @@ class Rectangle(BaseGeometry):
     """
     A class Rectangle that inherits from BaseGeometry
     """
-
     def __init__(self, width, height):
         """
-        Instantiation with width and height: def __init__(self, width, height):
-        width and height must be private. No getter or setter
-        width and height must be positive integers validated by integer_validator
+        Instantiation with width and height
         """
-        self.__width = self.integer_validator("width", width)
-        self.__height = self.integer_validator("height", height)
+        self.integer_validator("width", width)
+        self.__width = width
+        self.integer_validator("height", height)
+        self.__height = height
 
     def area(self):
         """
-        Implements the area() method
+        Public instance method that returns the area of the rectangle
         """
         return self.__width * self.__height
 
     def __str__(self):
         """
-        Prints and returns the following rectangle description: [Rectangle] <width>/<height>
+        Print and return the following rectangle description: [Rectangle] <width>/<height>
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
