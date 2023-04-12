@@ -1,18 +1,17 @@
 #!/usr/bin/python3
 """
-Inherits from list
+Module that defines a class MyList that inherits from list
 """
 
 
 class MyList(list):
     """
-    A custom class MyList that inherits from the built-in list class in Python.
+    A class MyList that inherits from list
     """
 
     def print_sorted(self):
         """
-        Public instance method that sorts and prints the list in ascending
-        order.
+        Public instance method that prints the list, but sorted
+        (ascending sort)
         """
-        sorted_list = sorted(self)  # sort the list in ascending order
-        print(sorted_list)  # print the sorted list
+        print(sorted(self))
