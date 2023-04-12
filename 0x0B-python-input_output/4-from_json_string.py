@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-"""This module provides a function for converting a JSON string to a Python object."""
+"""This module provides a function for converting
+a JSON string to a Python object."""
 
 import json
 
