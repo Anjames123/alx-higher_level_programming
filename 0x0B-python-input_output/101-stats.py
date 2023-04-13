@@ -1,39 +1,40 @@
 #!/usr/bin/python3
-"""
-101-stats.py: reads stdin line by line and computes metrics.
-Input format:
-    <IP Address> - [<date>] "GET /projects/260 HTTP/1.1"
-    <status code> <file size>
-"""
+"""Reads stdin line by line and computes metrics."""
 
 import sys
 
-count = 0
-file_size = 0
-status_codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+metrics = {
+    "size": 0,
+    "200": 0,
+    "301": 0,
+    "400": 0,
+    "401": 0,
+    "403": 0,
+    "404": 0,
+    "405": 0,
+    "500": 0
+}
 
 try:
-    for line in sys.stdin:
-        count += 1
+    for i, line in enumerate(sys.stdin, start=1):
         split_line = line.split()
         try:
-            file_size += int(split_line[-1])
+            status_code = split_line[-2]
+            if status_code in metrics:
+                metrics[status_code] += 1
+            metrics["size"] += int(split_line[-1])
         except Exception:
             pass
-        try:
-            status_code = int(split_line[-2])
-            if status_code in status_codes:
-                status_codes[status_code] += 1
-        except Exception:
-            pass
-        if count % 10 == 0:
-            print("File size: {}".format(file_size))
-            for k in sorted(status_codes.keys()):
-                if status_codes[k] != 0:
-                    print("{}: {}".format(k, status_codes[k]))
+
+        if i % 10 == 0:
+            print("File size: {}".format(metrics["size"]))
+            for k, v in sorted(metrics.items()):
+                if k != "size" and v != 0:
+                    print("{}: {}".format(k, v))
+
 except KeyboardInterrupt:
-    print("File size: {}".format(file_size))
-    for k in sorted(status_codes.keys()):
-        if status_codes[k] != 0:
-            print("{}: {}".format(k, status_codes[k]))
-    raise
+    print("File size: {}".format(metrics["size"]))
+    for k, v in sorted(metrics.items()):
+        if k != "size" and v != 0:
+            print("{}: {}".format(k, v))
+    sys.exit(0)
