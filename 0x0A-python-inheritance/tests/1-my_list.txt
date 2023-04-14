@@ -47,3 +47,44 @@ assumes all given values are of type int
     >>> MyList.print_sorted([1, 4, 2, 3, "5"])
     Traceback (most recent call last):
     TypeError: '<' not supported between instances of 'str' and 'int'
+
+# Test __str__() method for a list with integers
+>>> my_list = MyList([1, 2, 3])
+>>> print(my_list)
+[1, 2, 3]
+
+# Test __str__() method for an empty list
+>>> my_list = MyList([])
+>>> print(my_list)
+[]
+
+# Test __str__() method for a list with a single integer
+>>> my_list = MyList([1])
+>>> print(my_list)
+[1]
+
+# Test __str__() method for a list with non-integer elements
+>>> my_list = MyList(['one', 'two', 'three'])
+>>> print(my_list)
+['one', 'two', 'three']
+
+# Test __str__() method for a list with a mix of integer and non-integer elements
+>>> my_list = MyList([1, 'two', 3, 'four', 5])
+>>> print(my_list)
+[1, 'two', 3, 'four', 5]
+
+# Test append() method
+>>> my_list = MyList([1, 2, 3])
+>>> my_list.append(4)
+>>> print(my_list)
+[1, 2, 3, 4]
+
+>>> my_list = MyList([])
+>>> my_list.append(1)
+>>> print(my_list)
+[1]
+
+>>> my_list = MyList(['one', 'two', 'three'])
+>>> my_list.append('four')
+>>> print(my_list)
+['one', 'two', 'three', 'four']
