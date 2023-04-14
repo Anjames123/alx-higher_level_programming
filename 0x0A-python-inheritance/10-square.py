@@ -76,3 +76,13 @@ class Square(Rectangle):
         [Square] <width>/<height>
         """
         return "[Square] {}/{}".format(self.__size, self.__size)
+
+r = Rectangle(2, 4)
+print(r)
+print(r.area())
+
+s = Square(3)
+print(s)
+print(s.area())
+
+print(issubclass(Square, Rectangle))  # Should return True
